@@ -69,6 +69,9 @@ from apscheduler.triggers.cron import CronTrigger
 from apscheduler.triggers.interval import IntervalTrigger
 from app.services.quotes_ingestion_service import QuotesIngestionService
 from app.routers import paper as paper_router
+from app.routers import backtest as backtest_router
+from app.routers import paper_trading as paper_trading_router
+from app.services.paper_trading.scheduler import PaperScheduler
 
 
 def get_version() -> str:
@@ -568,6 +571,11 @@ async def lifespan(app: FastAPI):
             logger.info(f"⏸️ 新闻数据同步已添加但暂停: {settings.NEWS_SYNC_CRON}")
         else:
             logger.info(f"📰 新闻数据同步已配置（仅自选股）: {settings.NEWS_SYNC_CRON}")
+        
+        # 启动模拟交易调度器
+        paper_scheduler = PaperScheduler()
+        paper_scheduler.start()
+        logger.info("📈 模拟交易调度器已启动")
 
         scheduler.start()
 
@@ -719,6 +727,8 @@ app.include_router(sse.router, prefix="/api/stream", tags=["streaming"])
 app.include_router(sync_router.router)
 app.include_router(multi_source_sync.router)
 app.include_router(paper_router.router, prefix="/api", tags=["paper"])
+app.include_router(backtest_router.router, prefix="/api/backtest", tags=["backtest"])
+app.include_router(paper_trading_router.router, prefix="/api/paper-trading", tags=["paper-trading"])
 app.include_router(tushare_init.router, prefix="/api", tags=["tushare-init"])
 app.include_router(akshare_init.router, prefix="/api", tags=["akshare-init"])
 app.include_router(baostock_init.router, prefix="/api", tags=["baostock-init"])
