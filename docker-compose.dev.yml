@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: trading-frontend
+    ports:
+      - "5173:3000"
+    volumes:
+      # 挂载源码目录，实现热更新
+      # :Z 是为了解决 SELinux 权限问题 (Podman 特有)
+      - ./frontend:/app:Z
+      # 避免本地 node_modules 污染容器，或者容器内的反向污染
+      # 使用匿名卷挂载 node_modules，但这在 Podman rootless 模式下可能偶尔会有权限问题
+      # 如果遇到权限问题，可以注释掉下面这行，让 node_modules 直接写在挂载的 ./frontend 里
+      # - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      # 解决某些文件系统下的热更新失效问题
+      - CHOKIDAR_USEPOLLING=true
+    # 保持容器运行
+    stdin_open: true
+    tty: true

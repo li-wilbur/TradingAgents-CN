@@ -360,6 +360,37 @@ const routes: RouteRecordRaw[] = [
     }
   },
   {
+    path: '/quant',
+    name: 'QuantLab',
+    component: () => import('@/layouts/BasicLayout.vue'),
+    meta: {
+      title: '量化实验室',
+      icon: 'DataAnalysis',
+      requiresAuth: true,
+      transition: 'slide-up'
+    },
+    children: [
+      {
+        path: 'backtest',
+        name: 'BacktestLab',
+        component: () => import('@/views/QuantLab/Backtest.vue'),
+        meta: {
+          title: '策略回测',
+          requiresAuth: true
+        }
+      },
+      {
+        path: 'paper-trading',
+        name: 'StrategyPaperTrading',
+        component: () => import('@/views/QuantLab/PaperTrading.vue'),
+        meta: {
+          title: '策略模拟交易',
+          requiresAuth: true
+        }
+      }
+    ]
+  },
+  {
     path: '/paper',
     name: 'PaperTrading',
     component: () => import('@/layouts/BasicLayout.vue'),

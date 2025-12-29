@@ -11,7 +11,7 @@ async def check_config_reports():
     load_dotenv()
     
     # 连接 MongoDB
-    mongo_uri = os.getenv("MONGODB_CONNECTION_STRING", "mongodb://admin:tradingagents123@127.0.0.1:27017/")
+    mongo_uri = os.getenv("MONGODB_CONNECTION_STRING", "mongodb://admin:123qwe**..@127.0.0.1:27017/")
     db_name = os.getenv("MONGODB_DATABASE_NAME", "tradingagents")
     
     print(f"📊 连接数据库: {db_name}")

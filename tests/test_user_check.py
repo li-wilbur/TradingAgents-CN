@@ -2,7 +2,7 @@
 from pymongo import MongoClient
 
 # 直接连接 MongoDB
-mongo_uri = "mongodb://admin:tradingagents123@localhost:27017/"
+mongo_uri = "mongodb://admin:123qwe**..@localhost:27017/"
 client = MongoClient(mongo_uri)
 
 print(f"🔍 MongoDB URI: {mongo_uri}")

@@ -11,9 +11,8 @@ import sys
 from pymongo import MongoClient
 
 # MongoDB 连接配置（Docker 容器内）
-MONGO_URI = "mongodb://admin:tradingagents123@mongodb:27017/tradingagents?authSource=admin"
+MONGO_URI = "mongodb://admin:123qwe**..@mongodb:27017/tradingagents?authSource=admin"
 DB_NAME = "tradingagents"
-
 
 def main():
     """主函数"""

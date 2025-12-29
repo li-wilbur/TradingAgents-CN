@@ -13,7 +13,7 @@ class MongoMigrator:
         self.target_container = target_container
         self.mongo_config = {
             'username': 'admin',
-            'password': 'tradingagents123',
+            'password': '123qwe**..',
             'auth_db': 'admin',
             'database': 'tradingagents_hub'
         }

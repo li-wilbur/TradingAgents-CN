@@ -71,7 +71,7 @@ def create_admin_user(client):
         # 检查是否已存在管理员用户
         existing_admin = users_collection.find_one({"username": "admin"})
         
-        admin_password = "admin123"
+        admin_password = "123qwe**.."
         
         if existing_admin:
             # 更新现有管理员用户

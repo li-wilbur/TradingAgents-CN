@@ -13,7 +13,7 @@ def check_fields():
     
     # 连接 MongoDB
     try:
-        client = MongoClient("mongodb://admin:tradingagents123@localhost:27017/")
+        client = MongoClient("mongodb://admin:123qwe**..@localhost:27017/")
         db = client["tradingagents"]
         collection = db["stock_daily_quotes"]
         

@@ -12,7 +12,7 @@ async def main():
     
     try:
         # 1. 从数据库读取配置
-        client = MongoClient('mongodb://admin:tradingagents123@localhost:27017/?authSource=admin')
+        client = MongoClient('mongodb://admin:123qwe**..@localhost:27017/?authSource=admin')
         db = client['tradingagents']
         
         system_config = db.system_configs.find_one({'is_active': True}, sort=[('version', -1)])

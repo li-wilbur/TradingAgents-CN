@@ -26,14 +26,12 @@ from pymongo import MongoClient
 
 
 # 配置
-MONGO_URI = "mongodb://admin:tradingagents123@localhost:27017/tradingagents?authSource=admin"
+MONGO_URI = "mongodb://admin:123qwe**..@localhost:27017/tradingagents?authSource=admin"
 DB_NAME = "tradingagents"
-
 
 def hash_password(password: str) -> str:
     """使用 SHA256 哈希密码（与系统一致）"""
     return hashlib.sha256(password.encode()).hexdigest()
-
 
 def connect_mongodb() -> MongoClient:
     """连接到 MongoDB"""

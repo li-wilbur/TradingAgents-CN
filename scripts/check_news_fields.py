@@ -5,7 +5,7 @@
 from pymongo import MongoClient
 
 # 连接数据库
-client = MongoClient('mongodb://admin:tradingagents123@localhost:27017/?authSource=admin')
+client = MongoClient('mongodb://admin:123qwe**..@localhost:27017/?authSource=admin')
 db = client['tradingagents']
 
 print("=" * 80)

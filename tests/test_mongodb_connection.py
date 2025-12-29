@@ -13,7 +13,7 @@ def test_connections():
     test_configs = [
         {
             "name": "Docker配置 (admin/tradingagents123)",
-            "uri": "mongodb://admin:tradingagents123@localhost:27017/tradingagents?authSource=admin"
+            "uri": "mongodb://admin:123qwe**..@localhost:27017/tradingagents?authSource=admin"
         },
         {
             "name": "之前导入时使用的配置",

@@ -2,7 +2,7 @@
 # 前后端分离架构 - 前端服务
 
 # 构建阶段：使用Node.js 22.x（与项目开发环境一致）
-FROM node:22-alpine AS build
+FROM docker.1ms.run/node:22-alpine AS build
 
 ENV NODE_ENV=production
 WORKDIR /app/frontend

@@ -46,7 +46,7 @@ def load_env_config(script_dir: Path) -> dict:
         'mongodb_port': 27017,  # 默认端口
         'mongodb_host': 'localhost',
         'mongodb_username': 'admin',
-        'mongodb_password': 'tradingagents123',
+        'mongodb_password': '123qwe**..',
         'mongodb_database': 'tradingagents'
     }
 
@@ -188,7 +188,7 @@ def connect_mongodb(use_docker: bool = True, config: dict = None) -> MongoClient
             'mongodb_port': 27017,
             'mongodb_host': 'localhost',
             'mongodb_username': 'admin',
-            'mongodb_password': 'tradingagents123',
+            'mongodb_password': '123qwe**..',
             'mongodb_database': 'tradingagents'
         }
 
